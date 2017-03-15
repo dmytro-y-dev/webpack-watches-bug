@@ -25,6 +25,14 @@ const deployUrl = undefined;
 
 module.exports = {
   "devtool": "source-map",
+  "watchOptions": {
+    "ignored": [
+      "*.log",
+      /\.idea/,
+      /dist\/dev/,
+      /node_modules/
+    ]
+  },
   "resolve": {
     "extensions": [
       ".ts",
@@ -185,7 +193,7 @@ module.exports = {
         else {
             return 0;
         }
-    }
+      }
     }),
     new BaseHrefWebpackPlugin({}),
     new CommonsChunkPlugin({
